@@ -1,0 +1,4 @@
+{
+  "name": "@syth/web-api-rpg",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json"
+}
