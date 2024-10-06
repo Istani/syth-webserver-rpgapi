@@ -12,5 +12,8 @@
     "commitizen": {
       "path": "../../node_modules/cz-conventional-changelog"
     }
+  },
+  "dependencies": {
+    "express": "^4.21.0"
   }
 }
