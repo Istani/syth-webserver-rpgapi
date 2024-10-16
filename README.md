@@ -73,3 +73,15 @@ http://[Server Adresse]:5000/rpg/api/[Channel ID]/
 ]
 
 ``` 
+
+### /items
+```json
+[
+  {
+    "icon": ":herb:",
+    "name": "Heilkraut",
+    "heal": 20
+  }
+]
+
+``` 
