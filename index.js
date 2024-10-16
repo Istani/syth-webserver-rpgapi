@@ -17,6 +17,9 @@ router.use(async (req, res, next) => {
     res.send({ error: 'Wrong Channel ID' });
     return;
   }
+
+  // Weil das zum Testen nicht immer ueber den Hauptserver gestartet wird!
+  if (typeof req.custom_data == "undefined") req.custom_data={};
   req.custom_data.syth_user=channels[0].user_id;
   next();
 });
@@ -43,6 +46,12 @@ router.get('/inventories', async (req, res) => {
 router.get('/logs', async (req, res) => {
   debug.log("API Getting Logs for " + req.custom_data.syth_user);
   var data = await db.RPG_Logs.query().where("owner", req.custom_data.syth_user);
+  res.send(data);
+});
+
+router.get('/items', async (req, res) => {
+  debug.log("API Getting Items");
+  var data = await db.RPG_Items.query();
   res.send(data);
 });
 
